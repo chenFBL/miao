@@ -7,16 +7,18 @@
   <title>Document</title>
 
   <style>
+    html {
+      height: 100%;
+      width: 100%;
+    }
     body {
+      position: relative;
+      min-width: 1000px;
+      overflow: scroll;
       width: 100%;
       height: 100%;
       margin: 0;
       padding: 0;
-    }
-
-    input {
-      width: 140px;
-      height: 15px;
     }
 
     button {
@@ -24,11 +26,35 @@
       height: 18px;
     }
 
-    div aside {
+    aside > h1 {
+      position: absolute;
+      height: 50px;
       width: 200px;
-      height: 100%;
+      top: 0;
+      margin: 0;
       background-color: aqua;
-      position:fixed;
+      z-index: 800;
+    }
+
+    aside > div {
+      position: absolute;
+      height: 50px;
+      width: 200px;
+      margin: 0;
+      top: 50px;
+      background-color: aqua;
+      z-index: 700;
+    }
+
+    div > aside > ul {
+      position:absolute;
+      width: 200px;
+      top: 100px;
+      bottom: 0;
+      margin: 0;
+      background-color: aqua;
+      z-index: 600;
+      box-sizing: border-box;
       overflow: auto;
     }
 
@@ -40,36 +66,56 @@
       text-decoration: none;
     }
 
-    main {
-      height: 100%;
+    .b1 ol {
+      position: absolute;
+      bottom: 0;
       left: 200px;
       right: 400px;
+      top: 100px;
+      margin: 0;
+      min-width: 350px;
       background-color: bisque;
+      z-index: 500;
+      border: 2px solid;
+      box-sizing: border-box;
       overflow: auto;
-      position: fixed;
     }
 
     .a1 > h2 {
+      position: absolute;
       height: 100px;
+      left: 200px;
+      right: 400px;
+      min-width: 350px;
+      top: 0;
       margin: 0;
-      background-color: darkgray;
+      border: 2px solid;
+      box-sizing: border-box;
+      background-color: bisque;
+      z-index: 500;
     }
 
 
     .c1 {
+      position: absolute;
       width: 200px;
       height: 100%;
       right: 200px;
+      top: 0;
       background-color: cadetblue;
-      position: fixed;
+      border: 2px solid;
+      box-sizing: border-box;
     }
 
     .d1 {
+      position: absolute;
       width: 200px;
       height: 100%;
       right: 0;
+      top: 0;
       background-color: blue;
-      position: fixed;
+      border: 2px solid;
+      box-sizing: border-box;
     }
 
   </style>
