@@ -7,69 +7,118 @@
   <title>Document</title>
 
   <style>
-    div {
-      position: relative;
-      display: inline-block;
-      border: 2px solid;
-      background-color: chartreuse;
+    ul {
+      list-style: none;
+      padding: 0;
+      margin: 0;
     }
 
-    ul {
-      display: none;
-      list-style: none;
-      margin: 0;
-      padding: 0;
+    .a > li {
+      display: inline-block;
+    }
+
+    .a li {
       position: relative;
+      white-space: nowrap;
+      padding: 1em;
+    }
+
+    .a ul {
+      padding-top: .5em;
+      padding-bottom: .5em;
+      position: absolute;
       left: 0;
       top: 100%;
-      white-space: nowrap;
+      display: none;
+      box-shadow: 0 0 5px #333;
+      border-radius: .3em;
+    }
+
+    .a ul ul {
+      left: 100%;
+      top: -0.5em;
+    }
+
+    .a li:hover > ul {
+      display: block;
+    }
+
+    .a,
+    .a ul {
+      background-color: #333;
+      color: white;
+    }
+
+    .a li:hover {
       background-color: blue;
     }
 
-    div:hover  .a0 {
-      display: block;
-    }
-    .a0{
-      position: relative;
-    }
-    .a0 li:hover {
-      background-color: brown;
+    .a li li {
+      padding: 0 100px 0 10px;
     }
 
-    .a1 {
-      display: none;
-      list-style: none;
-      margin: 0;
-      padding: 0;
+    .a li li > span {
       position: absolute;
-      left: 100%;
-      top: 33%;
-      border: 2px solid;
-      white-space: nowrap;
-      background-color: yellow;
+      right: 10px;
+      top: 0;
     }
 
-   .a0 li:nth-child(2):hover > .a1 {
-      display: block;
+    li.sep {
+      border-top: 1px solid;
+      margin-top: 0.5em;
+      margin-bottom: 0.5em;
     }
 
   </style>
 </head>
 <body>
-  <div>
-    文件
-    <ul class="a0">
-      <li>保存</li>
-      <li>另存为
-        <ul class="a1">
-          <li>心机之蛙一直摸你肚子</li>
-          <li>心机之蛙一直摸你肚子</li>
-          <li>心机之蛙一直摸你肚子</li>
-        </ul>
-      </li>
+  <ul class="a">
+    <li>文件
+      <ul>
+        <li>打开
 
-      <li>桌面</li>
-    </ul>
-  </div>
+          <span>Ctrl+T</span>
+        </li>
+            <li class="sep"></li>
+              <li>保存 <span>Ctrl+S</span></li>
+              <li>保存<span>Ctrl+S</span></li>
+              <li>另存为...<span>></span>
+              <ul>
+                <li>大白菜帮<span>Ctrl+S</span></li>
+                <li>芬达<span>Ctrl+S</span>
+                  <ul>
+                    <li>大白菜帮</li>
+                    <li>大白菜帮</li>
+                    <li>大白菜帮</li>
+                  </ul>
+              </ul>
+            </li>
+      </ul>
+    </li>
+      <ul>
+        <li>保存</li>
+        <li>另存为</li>
+          <ul>
+            <li>新建</li>
+            <li>文件夹</li>
+            <li>桌面</li>
+          </ul>
+        <li>打开</li>
+      </ul>
+    <li>查看
+      <ul>
+        <li>大白菜帮</li>
+        <li>大白菜帮</li>
+        <li>大白菜帮</li>
+      </ul>
+    </li>
+    <li>编辑
+      <ul>
+        <li>大白菜帮</li>
+        <li>大白菜帮</li>
+        <li>大白菜帮</li>
+      </ul>
+    </li>
+  </ul>
 </body>
 </html>
