@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+
+  <style>
+    .imgs {
+      position: relative;
+      width: 500px;
+      height: 400px;
+      display: inline-block;
+      overflow: hidden;
+    }
+
+    .imgs img {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      left: 100%;
+      transition: 1s;
+    }
+
+    section {
+      width: 500px;
+      margin: auto;
+      border: 5px solid;
+      position: relative;
+    }
+
+    section input {
+      position: relative;
+      top: 400px;
+      z-index: 8;
+      display: none;
+    }
+
+    .indicators {
+      position: absolute;
+      bottom: 10px;
+      left: 10px;
+      z-index: 8;
+      font-size: 0;
+    }
+
+    .indicators label {
+      margin: 3px;
+      display: inline-block;
+      width: 10px;
+      height: 10px;
+      background-color: grey;
+      cursor: pointer;
+    }
+
+    .indicators label:hover {
+      background-color: red;
+    }
+
+    input:nth-child(1):checked ~ div img:nth-child(1),
+    input:nth-child(2):checked ~ div img:nth-child(2),
+    input:nth-child(3):checked ~ div img:nth-child(3),
+    input:nth-child(4):checked ~ div img:nth-child(4) {
+      left: 0;
+    }
+
+    input:nth-child(1):checked ~ .indicators label:nth-child(1),
+    input:nth-child(2):checked ~ .indicators label:nth-child(2),
+    input:nth-child(3):checked ~ .indicators label:nth-child(3),
+    input:nth-child(4):checked ~ .indicators label:nth-child(4) {
+      background-color: red;
+    }
+  </style>
+</head>
+<body>
+  <section>
+    <input type="radio" id="r1-1" name="radio1" checked>
+    <input type="radio" id="r1-2" name="radio1">
+    <input type="radio" id="r1-3" name="radio1">
+    <input type="radio" id="r1-4" name="radio1">
+
+    <div class="imgs">
+      <img src="https://th.bing.com/th/id/OIP.qfpef3pCryc11GeP0WOyJQHaEo?w=284&h=180&c=7&r=0&o=5&dpr=1.49&pid=1.7" alt="">
+      <img src="https://th.bing.com/th/id/OIP.K3VXE-dF2OYfPhJL2G6CRAHaEM?w=331&h=188&c=7&r=0&o=5&dpr=1.49&pid=1.7" alt="">
+      <img src="https://th.bing.com/th/id/OIP.HAuGpCUfJq-GFsTIdxneZwHaEo?w=264&h=180&c=7&r=0&o=5&dpr=1.49&pid=1.7" alt="">
+      <img src="https://th.bing.com/th/id/OIP.Qz_gHUAje8Zny7D8H_67XQHaEo?w=256&h=180&c=7&r=0&o=5&dpr=1.49&pid=1.7" alt="">
+    </div>
+
+    <div class="indicators">
+      <label for="r1-1"></label>
+      <label for="r1-2"></label>
+      <label for="r1-3"></label>
+      <label for="r1-4"></label>
+    </div>
+  </section>
+</body>
+</html>
