@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    .a1 {
+      width: 200px;
+      height: 200px;
+      background-color: red;
+    }
+    .a1 span {
+      display: inline-block;
+      width: 100px;
+      height: 100px;
+      background-color: aqua;
+      margin: 50px 0 0 50px;
+    }
+
+    .b2 {
+      display: inline-block;
+      display: table-cell;
+      width: 200px;
+      height: 200px;
+      background-color: red;
+      vertical-align: middle;
+      text-align: center;
+    }
+
+    .c1 {
+      position: relative;
+      width: 200px;
+      height: 200px;
+      background-color: red;
+    }
+    .c1 div {
+      position: absolute;
+      width: 100px;
+      height: 100px;
+      background-color: aqua;
+      left: 0;
+      top: 0;
+      right: 0;
+      bottom: 0;
+      margin: auto;
+    }
+
+    .d1 {
+      width: 200px;
+      height: 200px;
+      background-color: red;
+      position: relative;
+    }
+    .d1 div {
+      width: 100px;
+      height: 100px;
+      position: absolute;
+      background-color: aqua;
+      top: 50%;
+      left: 50%;
+      margin-left: -50px;
+      margin-top: -50px;
+    }
+
+    .e1 {
+      width: 200px;
+      height: 200px;
+      display: flex;
+      background-color: red;
+      justify-content: center;
+      align-items: center;
+    }
+    .e1 div {
+      width: 100px;
+      height: 100px;
+      background-color: aqua;
+    }
+  </style>
+</head>
+<body>
+  <div class="a1">
+    <span>margin</span>
+  </div>
+
+  <br>
+  <br>
+  <br>
+
+  <div class="c1">
+    定位+margin:auto
+    <div></div>
+  </div>
+
+  <br>
+  <br>
+  <br>
+
+  <div class="d1">定位+负margin
+    <div></div>
+  </div>
+
+  <br>
+  <br>
+  <br>
+
+  <span class="b2">display:table-cell</span>
+
+  <br>
+  <br>
+  <br>
+
+  <div class="e1">
+    <div>flex</div>
+  </div>
+</body>
+</html>
