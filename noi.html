@@ -850,12 +850,14 @@
   var s = 0
 
   for (var i = 1; i <= 10; i++) {
-    sum += (h + h / 2)
-    h = h / 2
+    h = h - h / 2
+    sum += (h + (h - h / 2)) * 2
     if (i == 10) {
-      s = h / 2
+      s = h
     }
   }
+
+  sum -= s
 
   console.log(sum.toFixed(4), s.toFixed(7))
 
@@ -871,19 +873,109 @@
 
 </script>
 
-<script id="ch0105/01"></script>
+<script type="x" id="ch0105/23">
+  var m = Number(prompt())
+  var n = Number(prompt())  //取药人数
+  var t = 0  //取药总数
+  var c = 0  //没取上药的人数
 
-<script id="ch0105/01"></script>
+  for (var i = 0; i < n; i++) {
+    t = Number(prompt())  //取多少药
+    t += t
+    if (t >= m) {
+      m -= t
+    } else {
+      c += 1
+    }
+  }
 
-<script id="ch0105/01"></script>
+  console.log(c)
 
-<script id="ch0105/01"></script>
+</script>
 
-<script id="ch0105/01"></script>
+<script type="x" id="ch0105/24">
+  var n = Number(prompt())
+  var s = 0
+  var max = 0
 
-<script id="ch0105/01"></script>
+  for (var i = 0; i < n; i++) {
+    a = Number(prompt())
+    b = Number(prompt())
 
-<script id="ch0105/01"></script>
+    if (a >= 90 && a <= 140 && b >= 60 && b <= 90) {
+      s += 1
+    } else {
+      s -= s
+    }
+    if (s > max) {
+      max = s
+    }
+  }
+
+  console.log(max)
+
+</script>
+
+<script id="ch0105/25">
+
+
+
+
+
+
+
+
+</script>
+
+<script type="x" id="ch0105/26">
+  var n = Number(prompt())
+  var sum = 0
+
+  for (var i = 0; i < n; i++) {
+    m = Number(prompt())
+    a = parseInt(m % 10)  //个位
+    b = parseInt(m / 1000)  //千位
+    c = parseInt((m % 1000) / 100)  //百位
+    d = parseInt((m % 100) / 10) //十位
+
+    if (a - b - c - d > 0) {
+      sum += 1
+    }
+  }
+
+  console.log(sum)
+
+</script>
+
+<script type="x" id="ch0105/27">
+  var k = Number(prompt())
+  var s = 0
+  for (var i = 1; s <= k; i++) {
+    s += 1 + 1 / i
+    if (s > k) {
+      break
+    }
+  }
+
+  console.log(s)
+
+</script>
+
+<script type="x" id="ch0105/28">
+  var n = Number(prompt())
+  var m
+
+  while (n != 0) {
+    m = n % 10
+    n = parseInt(n / 10)
+    console.log(m)
+  }
+
+</script>
+
+<script id="ch0105/29">
+
+</script>
 
 <script id="ch0105/01"></script>
 
