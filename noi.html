@@ -1072,12 +1072,29 @@
 <script type="x" id="ch0105/31">
   var n = Number(prompt())
   var m = Number(prompt())
+  var r = ``
+  var t = false
 
   for (var i = 1; i <= n; i++) {
     var open = true
+
+    for (var j = 1; j <= m && j <= i; j++) {
+      if (i % j == 0) {
+        open = !open
+      }
+    }
+
+    if(!open) {
+      if (!t) {
+        t = true
+        r += (i)
+      } else {
+        r += (`,` + i)
+      }
+    }
   }
 
-
+  console.log(r)
 
 </script>
 
@@ -1161,6 +1178,17 @@
   var m = Number(prompt())
   var n = Number(prompt())
   var x = Number(prompt())
+  var M = 0
+
+  for (var i = 5; i < x; i++) {
+    M += n
+    if(M >= m) {
+      n = n + m / n
+      M = 0
+    }
+  }
+
+  console.log(Math.ceil(n))
 
 </script>
 
@@ -1246,12 +1274,103 @@ console.log(sum)
 
 </script>
 
-<script id="ch0105/42">
+<script type="x" id="ch0105/42">
+  var h = Number(prompt())
+  var w = Number(prompt())
+  var char = prompt()
+  var fill = Number(prompt())
+
+  var result = ''
+
+  for (var i = 0; i < h; i++) {
+
+    for (var j = 0; j < w; j++) {
+      if (i == 0 || j == 0 || i == h - 1 || j == w - 1) {
+        result += char
+      } else {
+        if (fill) {
+          result += char
+        } else {
+          result += ' '
+        }
+      }
+    }
+    // 不是最后一行时，才在行尾加上一个回车
+    if (i !== h - 1) {
+      result += '\n'
+    }
+  }
+
+  console.log(result)
+
+</script>
+
+<script type="x" id="ch0105/43">
+  var n = Number(prompt())
+  for (var i = 2; i < n; i++) {
+    if (n % i == 0) {
+      console.log(n / i)
+      break
+    }
+  }
+
+</script>
+
+<script type="x" id="ch0105/44">
+  var n = Number(prompt())
+
+  var count = 0
+
+  for (var i = 2; ; i++) {
+    var i是素数 = true
+
+    for (var j = 2; j < i; j++) {
+      if (i % j == 0) {
+        i是素数 = false
+        break
+      }
+    }
+
+    if (i是素数) {
+      count++ // 对遇到的素数进行计数
+      if (count == n) { // 如果是第n个,则输出并结束
+        console.log(i)
+        break
+      }
+    }
+  }
+
+</script>
+
+<script type="x" id="ch0105/45">
+    var n = Number(prompt())
+
+var sum = 0 // 记录总的金币数量
+var coins = 1 // 当前时段发的金币数量
+var days = 0 // 当前面额的金币发了多少天
+
+// 遍历每一天,为了确保循环体内的逻辑运行n次
+for (var i = 1; i <= n; i++) {
+  sum += coins // 今天发coins枚金币
+  days++ // 发一次就记一天
+
+  // 如果当前面额的金币发的天数跟金币面额一样
+  if (days === coins) {
+    coins++ // 金币面额加1
+    days = 0 // 新的面额天数归零
+  }
+}
+
+console.log(sum)
+
+</script>
+
+<script type="" id="narcissistic">
 
 
+</script>
 
-
-
+<script id="narcissistics">
 
 
 </script>
@@ -1261,3 +1380,32 @@ console.log(sum)
 <script id="ch0105/01"></script>
 
 <script id="ch0105/01"></script>
+
+
+
+<script>
+  function fibb(n) {
+    if (n ==1 || n == 2) {
+      return 1
+    } else {
+      return fibb(n - 1) + fibb(n - 2)
+    }
+  }
+
+
+function find(x, y) {
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+</script>
