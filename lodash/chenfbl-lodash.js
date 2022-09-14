@@ -26,6 +26,7 @@ var chenfbl = {
     for (var i = n; i < array.length; i++) {
       result.push(array[i])
     }
+    return result
   }
-  return result
+
 }
