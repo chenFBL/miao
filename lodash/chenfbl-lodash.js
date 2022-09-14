@@ -1,5 +1,7 @@
-var chenfbl = {
-  chunk: function() {
-
+function chunk(ary, n) {
+  var temp = []
+  for (var i = 0; i < ary.length; i += n) {
+    temp.push(ary.slice(i, i + n))
   }
+  return temp
 }
