@@ -1,0 +1,41 @@
+<script>
+// www.baidu.com/search?a=asdf&b=aef&c=3&c=2&c=5&d=wfe
+
+function parseQueryString(str) {
+  var obj = {}
+  var pairs = str.split('&')
+
+  pairs.forEach(function(pair) {
+    var [key, val] = pair.split('=')
+
+    if (key in obj) {
+      if (!Array.isArray(obj[key])) {
+        obj[key] = [  obj[key]    ]
+      }
+      obj[key].push(val)
+    } else {
+      obj[key] = val
+    }
+
+  })
+
+  return obj
+}
+
+
+function add() {
+  var sum = 0
+  for (var i = 0; i < arguments.length; i++) {
+    sum += arguments[i]
+  }
+  return sum
+}
+
+
+
+
+
+
+
+
+</script>
