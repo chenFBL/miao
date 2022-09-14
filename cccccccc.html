@@ -768,18 +768,6 @@ function size(obj) {
 };
 
 
-
-
-
-
-
-
-
-
-
-
-
-
  </script>
 
 
@@ -896,11 +884,55 @@ function bind(f, ...fixedArgs) {
   }
 }
 
+</script>
+<script>
+    //9.14上课代码
+    var byName = ancestry.reduce((obj, person) => {
+  obj[person.name] = person
+  return obj
+}, {})
 
+var personsWhoCanFindMother = ancestry.filter(p => {
+  // var motherName = p.mother
+  // var motherObject = byName[motherName]
+  // return motherObject
 
+  return byName[p.mother]
+})
 
+var motherGiveBrithAge = personsWhoCanFindMother.map(p => {
+  var motherName = p.mother
 
+  var motherObject = byName[motherName]
 
+  return p.born - motherObject.born
+})
 
+var avgAge = average(
 
+  motherGiveBrithAge
+
+)
+console.log(avgAge)
+
+//
+// 计算名为name的人，其有多少基因来源于Pauwels van Haverbeke
+
+function computeGene(name) {
+  var person = byName[name]
+  if (!person) {
+    return 0
+  }
+  if (person.name === 'Pauwels van Haverbeke') {
+    return 1
+  }
+
+  var fatherName = person.father
+  var motherName = person.mother
+
+  var fromFather = computeGene(fatherName)
+  var fromMother = computeGene(motherName)
+
+  return (fromFather + fromMother) / 2
+}
 </script>

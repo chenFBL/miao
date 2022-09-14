@@ -7,7 +7,7 @@ var chenfbl = {
     return temp
   }
 
-  compact: function (ary) {
+  compact: function(ary){
     var result = []
     for (var i = 0; i < ary.length; i++) {
       if (ary[i]) {
@@ -17,4 +17,15 @@ var chenfbl = {
     return result
   }
 
+  fill: function () {
+
+  }
+
+  drop: function(array, n = 1) {
+    var result = []
+    for (var i = n; i < array.length; i++) {
+      result.push(array[i])
+    }
+  }
+  return result
 }
