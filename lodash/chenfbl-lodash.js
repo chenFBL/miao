@@ -42,7 +42,7 @@ var chenfbl = {
 
   dropRight: function (array, n = 1) {
     var result = []
-    for (var i = 0; i < array.length; i++) {
+    for (var i = 0; i < array.length - n; i++) {
       result.push(array[i])
     }
     return result
