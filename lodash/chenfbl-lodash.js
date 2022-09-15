@@ -5,7 +5,7 @@ var chenfbl = {
       temp.push(ary.slice(i, i + n))
     }
     return temp
-  }
+  },
 
   compact: function(ary){
     var result = []
@@ -15,11 +15,11 @@ var chenfbl = {
       }
     }
     return result
-  }
+  },
 
   fill: function () {
 
-  }
+  },
 
   drop: function(array, n = 1) {
     var result = []
@@ -27,6 +27,9 @@ var chenfbl = {
       result.push(array[i])
     }
     return result
-  }
+  },
 
+  findIndex: function () {
+
+  }
 }
