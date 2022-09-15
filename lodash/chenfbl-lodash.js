@@ -61,11 +61,11 @@ var chenfbl = {
     return -1
   },
 
-  head: function (array) {
+  head: function(array) {
     return array[0] ? array[0] : undefined;
   },
 
-  lastIndexOf: function (array, value, fromIndex = array.length - 1) {
+  lastIndexOf: function(array, value, fromIndex = array.length - 1) {
     for (var i = fromIndex; i > 0; i--) {
       if (array[i] === value) {
         return i
@@ -74,7 +74,40 @@ var chenfbl = {
     return -1
   },
 
-  nth: function (array, n = 0) {
+  nth: function(array, n = 0) {
     return array.at(n)
+  },
+
+  initial: function(array) {
+    array.pop()
+    return array
+  },
+
+  reverse: function (array) {
+    var left = 0
+    var right = array.length - 1
+
+    while (left < right) {
+      var tmp = array[left]
+      array[left] = array[right]
+      array[right] = tmp
+
+      left++
+      right--
+    }
+    return array
+  },
+
+  join: function (array, separator = ',') {
+    var result = ''
+
+    for (var i = 0; i < array.length; i++) {
+      if (i != array.length - 1) {
+        result += array[i] + (separator + '')
+      } else {
+        result += array[i]
+      }
+    }
+    return result
   }
 }
