@@ -115,7 +115,7 @@ var chenfbl = {
     var result = []
     for (var i = 0, len = array.len; i < len; i++) {
       if (Array.isArray((array[i]))) {
-        result = result.concat(this.flatten(array[i]))
+        result = result.concat(flatten(array[i]))
       } else {
         result.push(array[i])
       }
