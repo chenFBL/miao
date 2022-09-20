@@ -113,12 +113,14 @@ var chenfbl = {
 
   flatten: function (array) {
     var result = []
-    for (var i = 0, len = array.len; i < len; i++) {
-      if (Array.isArray((array[i]))) {
-        result = result.concat(flatten(array[i]))
+    for (var i = 0; i < array.length; i++) {
+      if (Array.isArray(array[i])) {
+        for (var j = 0; j < array[i].length; j++) {
+          result.push([i][j])
+        }
       } else {
-        result.push(array[i])
-      }
+          result.push([i])
+        }
     }
     return result
   },
