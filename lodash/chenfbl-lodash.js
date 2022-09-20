@@ -83,7 +83,7 @@ var chenfbl = {
     return array
   },
 
-  reverse: function (array) {
+  reverse: function(array) {
     var left = 0
     var right = array.length - 1
 
@@ -98,7 +98,7 @@ var chenfbl = {
     return array
   },
 
-  join: function (array, separator = ',') {
+  join: function(array, separator = ',') {
     var result = ''
 
     for (var i = 0; i < array.length; i++) {
@@ -109,5 +109,41 @@ var chenfbl = {
       }
     }
     return result
+  },
+
+  flatten: function (array) {
+    var result = []
+    for (var i = 0, len = array.len; i < len; i++) {
+      if (Array.isArray((array[i]))) {
+        result = result.concat(this.flatten(array[i]))
+      } else {
+        result.push(array[i])
+      }
+    }
+    return result
+  },
+
+  flattenDeep: function (array) {
+    var result = []
+    function flattenDeep(array) {
+      for (var i = 0; i < array.length; i++) {
+        let tmp = array[i]
+        if (Array.isArray(array[i])) {
+          flattenDeep(tmp)
+        } else {
+          result.push(tmp)
+        }
+      }
+    }
+    flattenDeep(array)
+    return result
+  },
+
+  fromPairs: function (pairs) {
+    let tmp = {}
+    for (var i = 0; i < pairs.length; i++) {
+      tmp[pairs[i][0]] = pairs[i][1]
+    }
+    return tmp
   }
 }
