@@ -1,5 +1,5 @@
 var chenfbl = {
-  chunk: function(ary, n) {
+  chunk: function (ary, n) {
     var temp = []
     for (var i = 0; i < ary.length; i += n) {
       temp.push(ary.slice(i, i + n))
@@ -7,7 +7,7 @@ var chenfbl = {
     return temp
   },
 
-  compact: function(ary){
+  compact: function (ary){
     var result = []
     for (var i = 0; i < ary.length; i++) {
       if (ary[i]) {
@@ -24,7 +24,7 @@ var chenfbl = {
     return array
   },
 
-  drop: function(array, n = 1) {
+  drop: function (array, n = 1) {
     var result = []
     for (var i = n; i < array.length; i++) {
       result.push(array[i])
@@ -32,7 +32,7 @@ var chenfbl = {
     return result
   },
 
-  findIndex: function(array, predicate, fromIndex=0) {
+  findIndex: function (array, predicate, fromIndex=0) {
 
   },
 
@@ -48,11 +48,11 @@ var chenfbl = {
     return result
   },
 
-  last: function(array) {
+  last: function (array) {
     return array[array.length - 1]
   },
 
-  indexOf: function(array, value, fromIndex = 0) {
+  indexOf: function (array, value, fromIndex = 0) {
     for (var i = fromIndex; i < array.length; i++) {
       if (array[i] === value) {
         return i
@@ -61,11 +61,11 @@ var chenfbl = {
     return -1
   },
 
-  head: function(array) {
+  head: function (array) {
     return array[0] ? array[0] : undefined;
   },
 
-  lastIndexOf: function(array, value, fromIndex = array.length - 1) {
+  lastIndexOf: function (array, value, fromIndex = array.length - 1) {
     for (var i = fromIndex; i > 0; i--) {
       if (array[i] === value) {
         return i
@@ -74,16 +74,16 @@ var chenfbl = {
     return -1
   },
 
-  nth: function(array, n = 0) {
+  nth: function (array, n = 0) {
     return array.at(n)
   },
 
-  initial: function(array) {
+  initial: function (array) {
     array.pop()
     return array
   },
 
-  reverse: function(array) {
+  reverse: function (array) {
     var left = 0
     var right = array.length - 1
 
@@ -98,7 +98,7 @@ var chenfbl = {
     return array
   },
 
-  join: function(array, separator = ',') {
+  join: function (array, separator = ',') {
     var result = ''
 
     for (var i = 0; i < array.length; i++) {
@@ -147,5 +147,35 @@ var chenfbl = {
       tmp[pairs[i][0]] = pairs[i][1]
     }
     return tmp
-  }
+  },
+  isBoolean: function (value) {
+    if (value == true || value == false) {
+      return true
+    }
+    return false
+  },
+
+  isDate: function (value) {
+    return value instanceof Date
+  },
+
+  isNil: function (value) {
+    return value == null
+  },
+
+  isNull: function (value) {
+    return value === null
+  },
+
+  isNumber: function (value) {
+    return typeof value === `number`
+  },
+
+  isObject: function (value) {
+    return value instanceof Object;
+  },
+
+  isRegExp: function (value) {
+    return value instanceof RegExp;
+  },
 }
